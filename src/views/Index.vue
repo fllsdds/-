@@ -1,5 +1,6 @@
 <template>
 <div class="index">
+  <!-- 搜索部分 -->
   <div class="head-index">
     <van-search
   v-model="value"
@@ -9,6 +10,7 @@
 />
   </div>
 
+  <!-- 红包部分 -->
   <div class="gift-index">
     <div class="elemang">
       <img src="../assets/img/饿了么.png" alt="">
@@ -24,15 +26,18 @@
         <p style="font-size:5vw;font-weight:700"> 最高领<em style="color:red">56</em>元 </p>
       </div>      
     </div>
-    
   </div>
+
+  <!-- 卡片部分 -->
+  <shopcard></shopcard>
 </div>
   
 </template>
 
 <script>
+import shopcard from '@/components/shopcard'
 export default {
-
+  components:{shopcard}
 }
 </script>
 
