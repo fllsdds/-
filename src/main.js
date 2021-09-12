@@ -4,6 +4,12 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import { Tabbar, TabbarItem, Search } from 'vant';
+
+Vue.use(Tabbar);
+Vue.use(TabbarItem);
+Vue.use(Search);
+
 new Vue({
   router,
   render: h => h(App)
