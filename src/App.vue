@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <router-view />
-    <van-tabbar route class="tabber-app" active-color="#f94a4a">
-      <van-tabbar-item replace to="/" icon="home-o" >首页</van-tabbar-item>
-      <van-tabbar-item replace to="/search" icon="manager-o" >我的</van-tabbar-item>
-    </van-tabbar>
+    <keep-alive>
+      <router-view />
+    </keep-alive>
+    
   </div>
 </template>
 

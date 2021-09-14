@@ -1,7 +1,9 @@
 <template>
 <div class="index">
   <!-- 搜索部分 -->
+  
   <div class="head-index">
+    <div style="text-align:left;color:#fff">首页</div>
     <van-search
   v-model="value"
   shape="round"
@@ -29,7 +31,15 @@
   </div>
 
   <!-- 卡片部分 -->
-  <shopcard></shopcard>
+  <div class="shop">
+    <shopcard v-for="count in 10" :key="count"></shopcard>
+  </div>
+
+  <van-tabbar route class="tabber-app" active-color="#f94a4a">
+      <van-tabbar-item replace to="/" icon="home-o" >首页</van-tabbar-item>
+      <van-tabbar-item replace to="/mine" icon="manager-o" >我的</van-tabbar-item>
+    </van-tabbar>
+
 </div>
   
 </template>
@@ -44,6 +54,7 @@ export default {
 <style lang="less" scoped>
   
   .index {
+    box-sizing: border-box;
     width: 100vw;
     height: 100vh;
     background-color: #f5f5f5;
@@ -90,5 +101,14 @@ export default {
      }
    }
  }
-
+.shop {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns:45vw 45vw;
+  grid-column-gap: 3vw;
+  grid-row-gap: 4vw;
+  width: 100vw;
+  height: 100vw;
+  background-color: #f5f5f5;
+}
 </style>
