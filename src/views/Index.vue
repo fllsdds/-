@@ -1,114 +1,180 @@
 <template>
-<div class="index">
-  <!-- 搜索部分 -->
-  
-  <div class="head-index">
-    <div style="text-align:left;color:#fff">首页</div>
-    <van-search
-  v-model="value"
-  shape="round"
-  background="#ef4238"
-  placeholder="请输入搜索关键词"
-/>
-  </div>
+  <div class="index">
+    <!-- 搜索部分 -->
 
-  <!-- 红包部分 -->
-  <div class="gift-index">
-    <div class="elemang">
-      <img src="../assets/img/饿了么.png" alt="">
-      <div style="margin-left:2vw;display:block;">
-        <p style="font-size:4vw;color:white">饿了么外卖红包</p>
-        <p style="font-size:5vw;font-weight:700;margin-left:-2vw;color:white"> 最高领<em style="color:#f8cb4a">66</em>元 </p>
-      </div>      
+    <div class="head-index">
+      <div class="search-index">
+        <van-icon
+          name="search"
+          color="#ef4238"
+          class="icon-index"
+          size="4.5vw"
+        />
+        <input type="text" placeholder="请输入商品名称或链接" />
+        <router-link to="list">
+          <button>搜索</button>
+        </router-link>
+      </div>
     </div>
-    <div class="meituan">
-      <img src="../assets/img/美团.jpg" alt="">
-      <div style="margin-left:2vw;display:block;">
-        <p style="font-size:4vw;margin-left:-1.5vw">美团外卖红包</p>
-        <p style="font-size:5vw;font-weight:700"> 最高领<em style="color:red">56</em>元 </p>
-      </div>      
+
+    <div class="help-radius"></div>
+    <!-- 卡片部分 -->
+    <div class="shop">
+      <router-link to="shopping" v-for="count in 10" :key="count">
+        <shopcard :imgurl="imgurl" :introduce="introduce"></shopcard>
+      </router-link>
     </div>
-  </div>
 
-  <!-- 卡片部分 -->
-  <div class="shop">
-    <shopcard v-for="count in 10" :key="count"></shopcard>
-  </div>
-
-  <van-tabbar route class="tabber-app" active-color="#f94a4a">
-      <van-tabbar-item replace to="/" icon="home-o" >首页</van-tabbar-item>
-      <van-tabbar-item replace to="/mine" icon="manager-o" >我的</van-tabbar-item>
+    <!-- 底部栏 -->
+    <van-tabbar
+      route
+      class="tabber-app"
+      active-color="#f94a4a"
+      fixed="true"
+      placeholder="true"
+    >
+      <van-tabbar-item replace to="/" icon="home-o">首页</van-tabbar-item>
+      <van-tabbar-item replace to="/mine" icon="manager-o"
+        >我的</van-tabbar-item
+      >
     </van-tabbar>
-
-</div>
-  
+  </div>
 </template>
 
 <script>
 import shopcard from '@/components/shopcard'
 export default {
-  components:{shopcard}
+  components: { shopcard },
+  data () {
+    return {
+      value: '',
+      imgurl: require('@/assets/img/刀.jpg'),
+      introduce: '拜格BAYCO系列黑刃不锈钢测试测试测试测试测试测试测试测试测试'
+    }
+  },
+  methods: {
+    onSearch (val) {
+      this.$router.push({ path: '/list' })
+      this.value = ''
+    },
+    onCancel () {
+      // this.$router.push({ path: "/mine" });
+    }
+  }
 }
 </script>
 
 <style lang="less" scoped>
-  
-  .index {
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
-    background-color: #f5f5f5;
+// 消除button默认样式
+button {
+  /*消除button的默认样式*/
+  /*这种写法是对所有的button标签同时生效*/
+  margin: 0px;
+  padding: 0px;
+  /*自定义边框*/
+  border: 0px;
+  /*消除默认点击蓝色边框效果*/
+  outline: none;
+}
+
+// 设置默认字体样式
+input::-webkit-input-placeholder {
+  color: #b6b6b6;
+}
+input::-moz-input-placeholder {
+  color: #b6b6b6;
+}
+input::-ms-input-placeholder {
+  color: #b6b6b6;
+}
+
+// 控制水平滚动条不出现
+html {
+  overflow-y: scroll;
+}
+
+:root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+:root body {
+  position: absolute;
+}
+
+body {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.index {
+  box-sizing: border-box;
+  width: 100vw;
+  background-color: #f5f5f5;
+  clear: both;
+}
+
+/*头部*/
+.head-index {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 28vw;
+  background-color: #ef4238;
+  border-top: 1px solid transparent; /*阻止外边距合并*/
+  .search-index {
+    display: flex;
+    align-items: center;
+    width: 94vw;
+    height: 8vw;
+    margin-left: 3vw;
+    margin-top: 14vw;
+    background-color: #fff;
+    border-radius: 8vw;
+    .icon-index {
+      margin-left: 2vw;
+    }
+    input {
+      display: inline-block;
+      flex-grow: 1;
+      height: 6vw;
+      border: none;
+      font-size: 3.5vw;
+      line-height: 3.5vw;
+    }
+    button {
+      box-sizing: border-box;
+      margin-left: 1vw;
+      margin-right: 1vw;
+      border: none;
+      border-radius: 7vw;
+      height: 7vw;
+      width: 12vw;
+      font-size: 2vw;
+      color: #fff;
+      background-color: #e53420;
+    }
   }
- .head-index {
-   width: 100vw;
-   height: 20vh;
-   background-color: #ef4238;
- }
- .gift-index{
-   display: flex;
-   height: 15vh;
-   width: 100vw;
-   .meituan{
-     display: flex;
-     align-items: center;
-     margin-top: 1vh;
-     margin-left: 2vw;
-     height: 23vw;
-     width: 48vw;
-     background-color: #f8cb4a;
-     border-radius: 2vh;
-     img{
-       margin-left: 2vw;
-       width: 16vw;
-       height: 16vw;
-       border-radius: 8vw;
-     }
-   }
-   .elemang{
-     display: flex;
-     align-items: center;
-     margin-top: 1vh;
-     margin-left: 1vw;
-     height: 23vw;
-     width: 48vw;
-     background-color: #06a9ff;
-     border-radius: 2vh;
-      img{
-       margin-left: 2vw;
-       width: 16vw;
-       height: 16vw;
-       border-radius: 8vw;
-     }
-   }
- }
+}
+
+.help-radius {
+  border-top: 1px solid transparent;
+  width: 100vw;
+  height: 5vw;
+  margin-top: -2.5vw;
+  margin-bottom: -2vw;
+  background-color: #f5f5f5;
+  border-radius: 5vw;
+}
+
 .shop {
   display: grid;
-  box-sizing: border-box;
-  grid-template-columns:45vw 45vw;
+  grid-template-columns: 45vw 45vw;
   grid-column-gap: 3vw;
   grid-row-gap: 4vw;
   width: 100vw;
-  height: 100vw;
   background-color: #f5f5f5;
+  a {
+    color: black;
+  }
 }
 </style>

@@ -1,7 +1,18 @@
 <template>
   <div class="mine">
     <!-- 头部 -->
-    <div class="head-m"></div>
+    
+    <div class="head-m">
+      <div style="color:#fdefed;">个人中心</div>
+      <div class="yonghu">
+        <img src="../assets/img/temp.jpg" alt="" align="left">
+        <div class="yonghuid">
+          <div>用户名</div>
+          <div>ID:1680302</div>            
+        </div>
+      </div>
+      
+    </div>
 
     <!-- 提现部分 -->
     <div class="withdrawal">
@@ -32,15 +43,8 @@
 
     <!-- 订单中心 -->
     <div class="order">
-      <div class="name-o">
-        订单中心
-      </div>
-      <div class="icon-o">
-        <div><van-icon size="8vw" name="coupon-o" /> <p>电影票订单</p> </div>
-        <div><van-icon size="8vw" name="description" /> <p>我的订单</p> </div>
-        <div><van-icon size="8vw" name="user-circle-o" />  <p>粉丝订单</p> </div>
-        <div><van-icon size="8vw" name="search" /> <p>订单找回</p> </div>
-      </div>
+      <van-icon name="notes-o" size="10vw" style="margin-left:2vw" /> <pre> 我的订单</pre> 
+      
     </div>
     <!-- 底部导航栏 -->
     <van-tabbar route class="tabber-app" active-color="#f94a4a">
@@ -66,8 +70,32 @@ export default {};
 }
 .head-m {
   width: 100%;
-  height: 60vw;
+  height: 58vw;
   background-color: #e93e2b;
+  border-radius: 0 0 3vw 3vw;
+  padding: 4vw;
+  .yonghu{
+    margin-top: 12vw;
+    display: flex;
+    .yonghuid{
+      display: flex;
+      flex-direction: column;
+      margin-top: 2vw;
+      margin-left: 2vw;
+      color: #ffffff;
+      div{
+        height: 6vw;
+        text-align: left;
+        font-size: 4vw;
+      }
+    }
+    img{
+    width: 16vw;
+    height: 16vw;
+    border-radius: 8vw;
+  }
+  }
+  
 }
 .w-black {
   display: flex;
@@ -80,20 +108,23 @@ export default {};
   border-top-right-radius: 2vw;
   background-color: #424242;
   p {
-    color: #fff8db;
-    font-size: 4vw;
+    margin-top: 1vw;
+    color: #a7a7a7;
+    font-size: 2vw;
     text-align: left;
     margin-left: 2vw;
   }
   .w-p1 {
-    font-weight: 700;
-    font-size: 5vw;
+    font-weight: 400;
+    font-size: 4vw;
+    color: #fff8db;
   }
   button {
-    height: 8vw;
-    width: 25vw;
-    margin-left: 25vw;
+    height: 7vw;
+    width: 20vw;
+    margin-left: 43vw;
     color: #a07c53;
+    font-size: 3vw;
     border-radius: 4vw;
     border: 0;
     background-color: #feefc6;
@@ -116,30 +147,15 @@ export default {};
   }
 }
 .order {
+  display: flex;
+  align-items: center;
   width: 94vw;
   margin-left: 3vw;
   margin-top: 3vw;
-  height: 25vw;
+  height: 20vw;
   background-color: #fff;
-  .name-o {
-    height: 20%;
-    text-align: left;
-    padding: 2vw;
-  }
-  .icon-o {
-    display: flex;
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      width: 25%;
-      height: 20vw;
-      p{
-        font-size: 2vw;
-      }
-    }
-  }
+  font-size: 2vw;
+  color: #b0b0b0;
+  
 }
 </style>

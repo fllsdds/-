@@ -1,43 +1,106 @@
 <template>
   <div class="shopcard">
-    <img src="../assets/img/temp.jpg" alt="">
-    <div class="description-c" style="padding:1vw">
-        <p class="p1" style="font-size:3vw">酷睿i7 10700八核独显LOL吃鸡游戏台式电脑主机i5组装机LOL全套5555555555555</p>
-        <p style="text-align:left;color:red">$1000</p>
+    <img :src="this.imgurl" alt="" />
+    <div class="description-c">
+      <div class="p1">
+        {{ introduce }}
+      </div>
+      <div class="underline">
+        <div style="text-align:left;color:#e86149;font-size:4vw;line-height:4vw;font-weight:600">9.9元</div>
+        <div style="text-align:left;color:#bbbabb;margin-left:-9vw;font-size:2vw;line-height:5.5vw;text-decoration:line-through">12.9元</div>
+        <div style="display:flex" class="ticket">
+          <div class="d1">劵</div>
+          <div class="d2">28元</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props:{
-    imgurl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ffile06.16sucai.com%2F2016%2F0829%2F2548b457374a7d4420df853067ea5320.jpg&refer=http%3A%2F%2Ffile06.16sucai.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1634040496&t=4c2d4734d13e6891110c96cc5a740ab8"
+  props: {
+    imgurl: {
+      type: String,
+      default: require('@/assets/img/temp.jpg')
+    },
+    introduce: {
+      type: String,
+      default: '商品名称'
+    }
   }
 }
 </script>
 
 <style lang="less" scoped>
-  .shopcard{
+.shopcard {
+  box-sizing: border-box;
+  height: 65vw;
+  width: 45vw;
+  margin-left: 3vw;
+  font-size: 0px;
+  img {
+    margin: 0;
+    height: 45vw;
     width: 45vw;
-    margin-left: 3vw;
-    img{
-      margin: 0;
-      height: 35vw;
+  }
+  .description-c {
+    font-size: 2vw;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #fff;
     width: 100%;
+    height: 20vw;
+    overflow: hidden;
+    .p1 {
+      width: 40vw;
+      margin-left: 2.5vw;
+      margin-top: 2vw;
+      height: 8vw;
+      line-height: 4vw;
+      font-size: 3.1vw;
+      font-weight: 530;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      text-align: left;
     }
-    .description-c{
-      box-sizing: border-box;
-      background-color:#fff;
-      width: 100%vw;
-      height: 15vw;
-      .p1{
-        overflow:hidden;
-        text-overflow:ellipsis;
-        display:-webkit-box;
-        -webkit-box-orient:vertical;
-        -webkit-line-clamp:2;
+    .underline {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3vw;
+      margin-left: 2.5vw;
+      width: 40vw;
+      .ticket{
+        .d1{
+          box-sizing: border-box;
+          width: 5vw;
+          height: 4vw;
+          line-height: 4vw;
+          border: 1px solid red;
+          border-right: 1px dashed red;
+          border-radius: 20%;
+          text-align: center;
+          color: #eb7865;
+        }
+        .d2{
+          box-sizing: border-box;
+          font-size: 2vw;
+          padding-left: 0.5vw;
+          padding-right: 0.5vw;
+          width: auto;
+          height: 4vw;
+          line-height: 4vw;
+          border: 1px solid red;
+          border-left: 0;
+          border-radius: 20%;
+          text-align: center;
+          color: #eb7865;
+        }
       }
     }
-    
   }
+}
 </style>
