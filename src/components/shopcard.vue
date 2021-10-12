@@ -35,14 +35,16 @@ export default {
 <style lang="less" scoped>
 .shopcard {
   box-sizing: border-box;
-  height: 65vw;
+  height: 66vw;
   width: 45vw;
   margin-left: 3vw;
   font-size: 0px;
+  border-radius: 3vw;
   img {
     margin: 0;
     height: 45vw;
-    width: 45vw;
+    width: 100%;
+    border-radius: 3vw 3vw 0 0;
   }
   .description-c {
     font-size: 2vw;
@@ -52,6 +54,7 @@ export default {
     width: 100%;
     height: 20vw;
     overflow: hidden;
+    border-radius: 0 0 3vw 3vw;
     .p1 {
       width: 40vw;
       margin-left: 2.5vw;

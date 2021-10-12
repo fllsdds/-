@@ -18,4 +18,23 @@ export default {}
   text-align: center;
   color: #2c3e50;
 }
+// 控制水平滚动条不出现
+html {
+  overflow-y: scroll;
+}
+
+:root {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+:root body {
+  position: absolute;
+}
+
+body {
+  width: 100%;
+  overflow: hidden;
+}
+
 </style>

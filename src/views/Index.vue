@@ -25,6 +25,11 @@
       </router-link>
     </div>
 
+    <!-- 弹窗 -->
+    <van-dialog v-model="show" title="恭喜你找到商品礼金" class="toast" show-cancel-button>
+      <shoplist></shoplist>
+    </van-dialog>
+
     <!-- 底部栏 -->
     <van-tabbar
       route
@@ -43,10 +48,12 @@
 
 <script>
 import shopcard from '@/components/shopcard'
+import shoplist from '@/components/shoplist'
 export default {
-  components: { shopcard },
+  components: { shopcard, shoplist },
   data () {
     return {
+      show: true,
       value: '',
       imgurl: require('@/assets/img/刀.jpg'),
       introduce: '拜格BAYCO系列黑刃不锈钢测试测试测试测试测试测试测试测试测试'
@@ -88,28 +95,9 @@ input::-ms-input-placeholder {
   color: #b6b6b6;
 }
 
-// 控制水平滚动条不出现
-html {
-  overflow-y: scroll;
-}
-
-:root {
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-:root body {
-  position: absolute;
-}
-
-body {
-  width: 100vw;
-  overflow: hidden;
-}
-
 .index {
   box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
   background-color: #f5f5f5;
   clear: both;
 }
@@ -117,7 +105,7 @@ body {
 /*头部*/
 .head-index {
   box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
   height: 28vw;
   background-color: #ef4238;
   border-top: 1px solid transparent; /*阻止外边距合并*/
@@ -158,7 +146,7 @@ body {
 
 .help-radius {
   border-top: 1px solid transparent;
-  width: 100vw;
+  width: 100%;
   height: 5vw;
   margin-top: -2.5vw;
   margin-bottom: -2vw;
@@ -171,10 +159,15 @@ body {
   grid-template-columns: 45vw 45vw;
   grid-column-gap: 3vw;
   grid-row-gap: 4vw;
-  width: 100vw;
+  width: 100%;
   background-color: #f5f5f5;
   a {
     color: black;
   }
+}
+
+.toast{
+  height: 55vw;
+  width: 75vw;
 }
 </style>

@@ -1,17 +1,17 @@
 <template>
   <div class="mine">
     <!-- 头部 -->
-    
+
     <div class="head-m">
       <div style="color:#fdefed;">个人中心</div>
       <div class="yonghu">
         <img src="../assets/img/temp.jpg" alt="" align="left">
         <div class="yonghuid">
           <div>用户名</div>
-          <div>ID:1680302</div>            
+          <div>ID:1680302</div>
         </div>
       </div>
-      
+
     </div>
 
     <!-- 提现部分 -->
@@ -27,24 +27,24 @@
       </div>
       <div class="w-white">
         <div class="w-1">
-          <p class="rmb">￥0</p>
-          <p>今日预估</p>
+          <p class="rmb">0元</p>
+          <p class="f">今日预估</p>
         </div>
         <div class="w-2">
-          <p class="rmb">￥0</p>
-          <p>今日预估</p>
+          <p class="rmb">0元</p>
+          <p class="f">本月预估</p>
         </div>
         <div class="w-3">
-          <p class="rmb">￥0</p>
-          <p>今日预估</p>
+          <p class="rmb">0元</p>
+          <p class="f">上月预估</p>
         </div>
       </div>
     </div>
 
     <!-- 订单中心 -->
     <div class="order">
-      <van-icon name="notes-o" size="10vw" style="margin-left:2vw" /> <pre> 我的订单</pre> 
-      
+      <van-icon name="notes-o" size="10vw" style="margin-left:2vw" /> <pre> 我的订单</pre>
+
     </div>
     <!-- 底部导航栏 -->
     <van-tabbar route class="tabber-app" active-color="#f94a4a">
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style lang="less" scoped>
@@ -95,7 +95,7 @@ export default {};
     border-radius: 8vw;
   }
   }
-  
+
 }
 .w-black {
   display: flex;
@@ -140,10 +140,14 @@ export default {};
     justify-content: center;
     width: 33.333%;
     background-color: #fff;
-    height: 20vw;
+    height: 15vw;
   }
   .rmb {
+    font-size: 4vw;
     color: #d81e06;
+  }
+  .f{
+    font-size: 2vw;
   }
 }
 .order {
@@ -156,6 +160,6 @@ export default {};
   background-color: #fff;
   font-size: 2vw;
   color: #b0b0b0;
-  
+
 }
 </style>
