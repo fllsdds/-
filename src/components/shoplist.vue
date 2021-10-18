@@ -5,7 +5,7 @@
       <div class="introduce">
         <div class="title">拜格BAYCO系列黑刃系列</div>
         <div class="shop">拜格京东自营旗舰店</div>
-        <div class="tag"> <span style="color:#fff;background-color:#fe0f10;padding:1px;border-radius:1vw">自营</span>  <span style="color:#fff;background-color:#fe0f10;padding:1px;border-radius:1vw">首领礼金</span><span style="color:#fd4a1b;background-color:#fdd760;padding:1px;border-radius:1vw">10元</span>  </div>
+        <div class="tag"> <span style="color:#fff;background-color:#fe0f10;padding:1px;border-radius:1vw">自营</span>  <span style="color:#fff;background-color:#fe0f10;padding:1px;border-radius:1vw">首领礼金</span>···<span style="color:#fd4a1b;background-color:#fdd760;padding:1px;border-radius:1vw">10元</span>  </div>
         <div class="price">9.9元 <span>29元</span> </div>
       </div>
       <button>领用</button>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 
 <style lang="less">
