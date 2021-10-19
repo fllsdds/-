@@ -26,8 +26,13 @@
     </div>
 
     <!-- 弹窗 -->
-    <van-dialog v-model="show" title="恭喜你找到商品礼金" class="toast" show-cancel-button>
-      <shoplist></shoplist>
+    <van-dialog v-model="show" title="恭喜你,成功找到10元商品礼金！" class="toast" confirm-button-text="去领取" confirm-button-color="#fdb304" theme="round-button" >
+      <div style="background-color:#e94c37">
+        <div style="width:70vw;height:30vw;overflow:hidden;margin-left:-1vw;border-radius: 20% 20% 20% 20%;">
+        <shoplist style="width:70vw" ></shoplist>
+        </div>
+      </div>
+
     </van-dialog>
 
     <!-- 底部栏 -->
@@ -53,9 +58,9 @@ export default {
   components: { shopcard, shoplist },
   data () {
     return {
-      show: true,
+      show: true, // 设置弹窗是否出现
       value: '',
-      imgurl: require('@/assets/img/刀.jpg'),
+      imgurl: require('@/assets/img/dao.jpg'),
       introduce: '拜格BAYCO系列黑刃不锈钢测试测试测试测试测试测试测试测试测试'
     }
   },
@@ -167,7 +172,17 @@ input::-ms-input-placeholder {
 }
 
 .toast{
-  height: 55vw;
-  width: 75vw;
+  height: 60vw;
+  width: 72vw;
+
+  /deep/ .van-dialog__header{
+    background-color: #e94c37;
+    color: #fff;
+  }
+
+  /deep/ .van-dialog__footer{
+    background-color: #e94c37;
+  }
 }
+
 </style>

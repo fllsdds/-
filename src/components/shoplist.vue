@@ -1,7 +1,7 @@
 <template>
   <div class="shoplist">
     <div class="listcard">
-      <img src="@/assets/img/刀.jpg" alt="" />
+      <img src="@/assets/img/dao.jpg" alt="" />
       <div class="introduce">
         <div class="title">拜格BAYCO系列黑刃系列</div>
         <div class="shop">拜格京东自营旗舰店</div>

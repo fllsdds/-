@@ -1,3 +1,5 @@
+const { reduce } = require("core-js/core/array")
+
 module.exports = {
   // 基本路径
   publicPath: '/',
@@ -19,7 +21,7 @@ module.exports = {
   // 生产环境是否生成 sourceMap 文件
   productionSourceMap: false,
   // css相关配置
-  /*css: {
+  /* css: {
       // 是否使用css分离插件 ExtractTextPlugin
       extract: true,
       // 开启 CSS source maps?
@@ -28,10 +30,10 @@ module.exports = {
       loaderOptions: {},
       // 启用 CSS modules for all css / pre-processor files.
       modules: false
-  },*/
+  }, */
   // use thread-loader for babel & TS in production build
   // enabled by default if the machine has more than 1 cores
-//   parallel: require('os').cpus().length > 1,
+  //   parallel: require('os').cpus().length > 1,
   // 是否启用dll
   // See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#dll-mode
   // dll: false,
@@ -40,26 +42,26 @@ module.exports = {
   pwa: {},
   // webpack-dev-server 相关配置
   devServer: {
-      // open: process.platform === 'darwin',
-      //将服务启动后默认打开浏览器
-      open: true,
-      host: '0.0.0.0',
-      port: 8080,
-      https: false,
-      hotOnly: false,
-      proxy: {// 设置代理
-          '/api': {
-              target: 'http://www.lzzyaf.com',
-              changeOrigin: true,
-              pathRewrite: {
-                  '^/api': '/'
-              }
-          }
-      },
-      before: app => {}
+    // open: process.platform === 'darwin',
+    // 将服务启动后默认打开浏览器
+    open: true,
+    host: '0.0.0.0',
+    port: 8080,
+    https: false,
+    hotOnly: false,
+    proxy: { // 设置代理
+      '/api': {
+        target: 'http://www.lzzyaf.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/'
+        }
+      }
+    },
+    before: app => {}
   },
   // 第三方插件配置
   pluginOptions: {
-      // ...
+    // ...
   }
 }

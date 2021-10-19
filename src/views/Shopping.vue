@@ -2,7 +2,7 @@
   <div class="Shopping">
     <!-- 顶部导航栏 -->
     <!-- 商品部分 -->
-    <img src="../assets/img/鸭.jpg" alt="" />
+    <img src="../assets/img/ya.jpg" alt="" />
     <router-link to="/">
       <van-icon
         name="arrow-left"
@@ -22,7 +22,7 @@
         <div class="d2"><span>优惠后</span>70元</div>
       </div>
       <div class="line3">
-        <img src="../assets/img/红包.png" alt="" />
+        <img src="../assets/img/hongbao.png" alt="" />
         <div class="d1">50元</div>
         <div class="d2">点击</div>
       </div>
@@ -35,7 +35,7 @@
           <p><van-icon name="location-o" size="4vw" />广东中山</p>
         </div>
       </div>
-      <img src="../assets/img/快乐鸭.jpg" alt="" />
+      <img src="../assets/img/kuaileya.jpg" alt="" />
     </div>
   </div>
 </template>
